@@ -3,15 +3,12 @@ sudo: required
 group: edge
 env:
   global:
-    - secure: G4MhQVAEjH2tLoO2Ep9icDvLyjCcrx8iJmzuRXU6R8fqF0BSK3a5vn0wrzI9yv2CscOapo+hXJR06UEF6OULSduklFvVdNLccp6yYvkc/l9YXgxd6bJrf1qpRT1Rv4GtF5ZrFFGQMTWUL2EQ0ssG7Sq+Mg+5Zc/RBX5EFhwUkJ1lkfyZB0deTY2g1QERDu5+n+7SZnV/AtsuAicuH1fQTvzOg5f1O9Ium0vFbkUUTgkaES8WNicsbUkvB/l4TF+wkEG2USr08gHCxyTSfF0ZwLGGvOgG3BU/N0e5s6IABm82Lc6JgxtCfBsPJ1Wjx3/Hi0jYcnYO+Py17WsyBhZxkECbK1vZxVqKeXOVacKRqxHDqEku5g5NJLbrGR1z5PdV0CTKTR0MwSVACJ6cied/8yB9GBM26/cDOSkQJz7PJlJA9HmzZB6/v/j9NgL7ncf5rke+/gczHPrA5fMPlGjPFLyWF1Az3+9MkKnldlOYHQ9VPjdaqkffuhAcAAG1wZa9udRbLKPhxQpZV8mn5+dlWPdmq6uAMaSS7LD1XPf1yI1H+YeTns2eCW0wE/wAKsTiHkkx3OzuBq7Kn/wAuWgZ30Uj4l5idTJTiSUpNSZEfArJAmZeG9Y6UZvuuT0U2RkS+Xf6DvkmeQbTm3RdwCejrDutXQQsyD15kCqBVaypeHM=
-
+    - secure: FndzG5byUBskHLsDW+oG2wiiYwlBS0jQTL/wOcmDeVO7/lrdz6Md5NH/SoODyMZNLpcnpYkGsSznfiVxrcfbGkw8tw4JALwTSKhTlHVcV216qzpxY9tose+k9xX2F0BcGKDCk7WrC1BD1V/Xzt5QEyAFQL1OfVDxbCQkLIxM2Z3E6mFjzX59w0pKQMS7Jlv3LS2kt7wIfWkJrsP8dlv3W4Y3xxNkXZ+aW098S9G81SbUkW1dewpqE86Hko7OUWL3nkbehm4b1CaI3HFQgcY12WYx7kdGDrXaHK73HYjtS/5OidpYqLNp6nvD8LLeojn1QRpys+2zgGJGwUBFPg3VbTN02KOv8q5RGghX8+qr2MRs0Q3Kk49eAQHECpzgfVS2GKo/xPoC5l8hHOTaoPYS/E7qACG3odG6umCdnWzk/OuEr3ndKrfo/xQ3HJwWlX52Y5n14Fc5r5Dac63z3bYl2sYrnA3I8/uJp8ZZHwkOqbN3+SeoFWwuzYybfusgPj7Nho9JHjPCO1T4pIzG7ZXyGRFdYbHJRCZ6CTflMiSGxu/usSjPwGYdwv+VodCaImLZyVaCyQOkg1MZ1w3bCSrJYikKeXIy1uPKzFM2GUE6/NJtEIrnPSh4GQWqEtBFdkK5MNeVmIMNcBCh1DbFkq9RuGqI6w4D/HlAKtddILR3a/M=
 services:
-  - docker
-
+- docker
 script:
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_TAG
-
+- echo $TRAVIS_BRANCH
+- echo $TRAVIS_TAG
 after_success:
-  - docker login -u kuzzleteam -p $DOCKER_PASSWORD
-  - bash build-docker-images.sh
+- docker login -u kuzzleteam -p $DOCKER_PASSWORD
+- bash build-docker-images.sh
