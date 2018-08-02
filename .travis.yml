@@ -1,40 +1,17 @@
 dist: trusty
 sudo: required
 group: edge
-jdk: oraclejdk8
+
 env:
   global:
-    secure: VlK2mDM3pIR1XPK+PVTfaGZzyp2auK4HFvwl4k9Jz9AohVCxzIcvFpq7lFMiwy/Mk/2pk/QaK3d3ZbEW7LxDwDt2lhKUWIX7w4p0pfRx7SbSdOpN1ZpZ2v3tNbbgmpyLfxIwu9FW9/9klmnpaC/ai5vllJ1tJesYMBxJZ20Qx36qv9A42Ia35z/kJwqBJNkl2H7KCcpjc+ORGEySN0tHqmrlR3qMH/XGjYBR5KrrF617R+Ja1I2f6PXu/dWfUlWi7BogB9qSNmVq2Xq2ZN2x8DBQWrLav9xeONHNJW48SfCYvOnsi/vpmQr/61zvCtkMNLN7FOg7SHdkpFwvlHN4Fe1aR0keDqb86kr5xCAkciXsT8cWau1YIoz7XqesmGfSQVeC9PTsO7ku/sYao/2gB4eOw7Eq5imrHVHFbVEj78SEA8u5OLT96jzflLeBqb4U3M3sEQXwUPkQDjdkD0WnTHzhHY2J/1tRBsKKhiyIdFryIqzmJPB6z8THVQp7F+RHXCWn7iVobmh8BjuONiK4XOfj4tAzJHmNdIi53wvHmcKgjHUl8oq705BESmmpYUlT6fTIBeBsLRpy9qjZweMzgU/dOlZXrDZcPgRJKrYrJiNmmTo96mbWOV8jBmTv/Pp/Noi4OOGpAC6KMKp67uox9hcjvemX0HP4hsCsbc3CBss=
+    secure: ufjzzT0QUMD98vrVoohTD9DXt99RcIEPVR4BnXfSrZF7grh+fZieuXi0kMiQcH1LbkdV44o8t0exlpGSV1CfBrDhAN4LZTgb9VOgl4DjBVUBfoj/9K1eGtLuRigR370vrwm6VRbR7uB5ZqJOj3HlxDT0e3KlVuV+2eQPbFmOSbSRX/UHr0QMhNBPFK6axc6y1VRf1V7KHlww3uZzIcFUYXuUzUS537qTWyU/EGsricMTVo1gYIzswiaFxLK8WI2wEhLvfS3UKLMZqANETGPkFlZRcW7wyF4wiPGeh0ZT+cFl5z5gpwJUGne7FAsIjGCnZFFprw1fZv48/DZ8BsUIkCToZz0xouIOdEflr2hM0ouAjafCdwqP1IZ+uxy2RciIRyOClK5NM+SMkdLJbZXDIydXJRWyoegaeckEnm5Egz2RHNvHACimsu1cRxnI/Uj90iWWNFIvQQRcAZKb5yRsii49KxBWEFHxeF9gN4z8U46PtCAYUB/Viva0pTyT+Xm981gFsNu2Vxjr16IaF/KV0N0VqpiQAeN/7X1FHLxhlukwLu+cZoD7MJr06jvuVP3b9WY14I4rVYWUujrI9rmyCc24PEVJF4RJAXnkVrd65sAF1DL1PFbDvmscwlTIGVOH1mrU1VtYtYnq3MaZcUXnZZYBTJXfd2qbjgSnvcFaQDI=
+
 services:
-- docker
+  - docker
+
 script:
-- bash test/travis-bin/run-tests.sh
-- bash test/travis-bin/sonar.sh
-cache:
-  directories: "– $HOME/.pm2 – $HOME/.sonar/cache"
-notifications:
-  webhooks:
-    urls:
-    - https://webhooks.gitter.im/e/8e145155fbaaf37cffea
-    on_success: change
-    on_failure: always
-    on_start: never
-  email: false
-  slack:
-    secure: lcjjpIGmtjOac4SkeMg6rMcUu+3wee+xgEsBC6a1sYCWGKTxs6x22ezCHwBKbjZ9r14wm+2zOfYuBxWtvxkfduB8WVHH/U+2l5Fto37BxFvWSBqBJy+6BzMz+3gH9JvpHHOjuiqotDX8IQwsQhCgO2MIu+clU3F/T2KT9QtZAFzGnD00vjAkPH+9usxTKfFAmKNwETbTCP3cf3s0KOeX8q3YVW7yYV2Rx3lKT6LDtwzRoO1Fuhp6XNgTkKSWnrbkGsr0terSinkwHj/77cgyrnAVKKUo21Oorz9w6lBTOhvj32H0cShta0zk97+E3bhdhCg9hZtF7oqA+u2thLEWRX2luWlN45X6+kpcrEJYg4Zlhd+ABJyk9a68GwP9H9Kqa8+BxTk4tJzf9w/jgKhFcyM2HMBpD97aGqtQMUKXV5lwQPgutL7eGg8irGKwaidWKT9yWRthAQc0xRiv9/zc6Hwtb9RuRi6KZeyKrLFmDT2PP4Y5NhkDV6XFMaxllx0MSaYC4skl59gbrMl3FZWv8xgJUNHHyxfxheg9Apyf1MXGZOqsIlmqky87pO6csqVL1N5MsKrR12EEzBhW+71VnEPph5vNtTU6gm7sIHCkMPUdCbPNZtBnoK+1SF/T8PehgTPIkakFxmqMNy/ApEFHlUT3/5KvAKs37k481QROGV8=
-    on_success: never
-    on_failure: always
-    on_start: never
-deploy:
-  provider: npm
-  email: support@kuzzle.io
-  api_key:
-    secure: ueYTwE9O8n5nNb0RRqszFEWBAuLPt6w+f0oXgp3nuSV3YVlrXPj4OQ3kmqoPD0abfr9koC1GfrLd2UOyspF5tzVHorueUJJtKb2O59usTrxUOntswIWpjIy8+/CFiw8isbdfhK35d4d2B+A8sFIwcBnuTdFdsI23OiEwJtiilDtxZrowVehDSUxgAMrbp0FtavXAJsC4C39OM1iHrdGhq/3ujzpHPudW7j78Lc6W9BvP7hHCFH3X/b0lCESSFuGTuduDN0LGHJegQ48U930zI4mVEAz8CN32NFZPd3FaLEkJGU0cOILJLqWYPkfOW8g/FSca/Qpa6nlV6MhLOjd3ld9V1DRihOVQg5qUCn9Gy5OaWj+E2S6KEIi3HVmz7LhM2UVcEchrWxsER/DSO02phlvyMrcBdNNxwshf6TO45L2V3cdb95rniP5hECunviV1Kd8rbuh0ptUyNAg/vb/WSEfJmOU4NF3wJHyLSIMXANgZAiNkYfNsydIbKRUSGzwSvLlQc27OnAQlHDbWqAn88XFKGQxibZIh+LOox+nsmH8roBgY0yqMB6nkzbDHadMoObCKKMIe5SKsq7ZOc6LCbdSePq6XbxS8gJO+fr3KfpwxRUqH/EUtpcGzLMU3HBpnwwOjScBq+vVHhaVsenYDUXcaiHnw8kEqIocTtS0vtuU=
-  on:
-    repo: kuzzleio/kuzzle
-    branch: master
-addons:
-  sonarqube: true
+  - echo $(env | grep TRAVIS)
+
 after_success:
-- docker login -u kuzzleteam -p $DOCKER_PASSWORD
-- bash build-docker-images.sh
+  - docker login -u kuzzleteam -p $DOCKER_PASSWORD
+  - bash build-docker-images.sh
