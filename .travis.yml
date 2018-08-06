@@ -9,16 +9,7 @@ services:
   - docker
 
 script:
-<<<<<<< Updated upstream
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_TAG
-
-after_success:
-  - docker login -u kuzzleteam -p $DOCKER_PASSWORD
-  - bash build-docker-images.sh
-=======
 - echo $TRAVIS_BRANCH
 - echo $TRAVIS_TAG
 - echo $TOTO
 - env
->>>>>>> Stashed changes
